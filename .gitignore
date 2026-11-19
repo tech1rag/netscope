@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.idea/
+.vscode/
+# your own captures stay private; the demo capture is kept
+*.pcap
+!examples/sample.pcap
