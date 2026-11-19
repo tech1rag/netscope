@@ -17,22 +17,20 @@ Think of it as a read-only cousin of nmap and Wireshark, built for learning.
 - Summary at the end: protocol share, top ports/services, TCP flags, top remote addresses
 - Save captures to `.pcap` (open in Wireshark) or replay one with `-r`
 
-## Install
-
+## Install for Linux:
+On Windows, see the [Windows](#windows) section below.
 ```bash
 git clone https://github.com/<your-username>/netscope.git
 cd netscope
 python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+source .venv/bin/activate          
 pip install -e .
 ```
 
-Requires Python 3.9+. On **Windows** also install [Npcap](https://npcap.com) (tick "WinPcap API-compatible mode").
-
 ## Quick start
 
+On Windows, see the [Windows](#windows) section below.
 Try it without any admin rights using the bundled demo capture:
-
 ```bash
 netscope -r examples/sample.pcap --no-geo
 netscope example.com --info-only
@@ -50,6 +48,71 @@ netscope example.com
 
 While it runs, open the site in your browser (or `ping` it) from another window to generate traffic.
 Press **Ctrl+C** to stop and see the summary.
+
+
+## Windows:
+
+netscope should also work on Windows. These steps have not been tested on Windows yet, so please
+[open an issue](../../issues) if something goes wrong.
+
+**1. Install once**
+
+- [Python 3.9+](https://www.python.org/downloads/) (tick **Add python.exe to PATH**)
+- [Git](https://git-scm.com/downloads)
+- [Npcap](https://npcap.com) (tick **Install Npcap in WinPcap API-compatible Mode**). This lets Python capture packets.
+- Windows Terminal is recommended, because the old `cmd.exe` window can draw tables badly.
+
+**2. Clone and install (PowerShell)**
+
+```powershell
+git clone https://github.com/tech1rag/netscope.git
+cd netscope
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -e .
+```
+
+If activation says "running scripts is disabled", run this once and try again:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+In `cmd.exe`, activate with `.venv\Scripts\activate.bat` instead.
+
+**3. Try it (no admin rights needed)**
+
+```powershell
+netscope --version
+netscope -r examples\sample.pcap --no-geo
+netscope example.com --info-only
+```
+
+**4. Live capture (needs an Administrator terminal)**
+
+Windows has no `sudo`. Right-click Windows Terminal or PowerShell, choose **Run as administrator**, then:
+
+```powershell
+cd path\to\netscope
+.venv\Scripts\Activate.ps1
+netscope --list-interfaces
+netscope example.com -t 30
+```
+
+While it runs, generate traffic from a second, normal PowerShell window:
+
+```powershell
+curl.exe -sI https://example.com
+```
+
+If the table stays empty, choose your connection from `--list-interfaces` and pass it with `-i`, for example `netscope example.com -i "Wi-Fi"`.
+
+**Troubleshooting**
+
+- *"libpcap provider" warning:* Npcap is missing or was not installed in WinPcap-compatible mode. Reinstall it with that option ticked.
+- *Nothing is captured:* make sure the terminal is running as Administrator and you picked the right interface.
+
+
 
 ## Usage
 
