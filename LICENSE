@@ -1,18 +1,21 @@
-# Dual License Notice
+MIT License
 
-Copyright (c) 2026 CHIRAG BHARDWAJ. All rights reserved.
+Copyright (c) 2026 Chirag Bhardwaj
 
-This software is available under a dual-licensing model:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## 1. Open Source License (GNU AGPLv3)
-You may use, modify, and distribute this software for free for personal, educational, or open-source projects under the terms of the **GNU Affero General Public License v3.0 (AGPLv3)**. 
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Under the AGPLv3, if you distribute this software or run a modified version over a network (such as a web app or SaaS), you **must** make the complete source code of your entire project publicly available under the same AGPLv3 license.
-
-See the `LICENSE-AGPL` file in this repository for the full license text.
-
-## 2. Commercial License
-If you are a company or individual who wants to use this software in a proprietary, closed-source, or monetized product without complying with the source-sharing requirements of the GNU AGPLv3, you must purchase a private commercial license.
-
-To request a commercial license, please contact: **chirag2012bhardwaj@gmail.com** or through LinkedIn: chirag-bhardwaj-cs
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
